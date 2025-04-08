@@ -49,7 +49,7 @@ pipeline {
                 script {
                     echo 'Deploying the application...'
                     // For production deployment
-                    sh 'npm start'
+                    // sh 'npm run start'
                     
                     // For development/staging environments
                     // sh 'npm run dev'
