@@ -45,24 +45,12 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Deploy with Docker Compose') {
             steps {
                 script {
-                    echo 'Building Docker image...'
-                    // Construye la imagen Docker localmente a partir del Dockerfile
-                    sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
-                }
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                script {
-                    echo 'Deploying the application in Docker container...'
-                    // Ejecuta el contenedor Docker en tu máquina local
-                    sh """
-                        docker run -d --name my-next-app-container -p 3000:3000 ${DOCKER_IMAGE}:${DOCKER_TAG}
-                    """
+                    echo 'Deploying the application using Docker Compose...'
+                    // Usamos Docker Compose para levantar los servicios
+                    sh 'docker-compose -f docker-compose.yml up -d --build'
                 }
             }
         }
