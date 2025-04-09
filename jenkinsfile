@@ -78,7 +78,7 @@ pipeline {
         always {
             echo 'Cleaning up workspace...'
             // Limpia el entorno, puedes eliminar imágenes no deseadas o contenedores
-            sh 'docker system prune -f' // Esto elimina imágenes no utilizadas y contenedores detenidos
+            //sh 'docker system prune -f' // Esto elimina imágenes no utilizadas y contenedores detenidos
         }
     }
 }
