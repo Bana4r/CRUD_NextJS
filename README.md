@@ -16,7 +16,7 @@ Para poder ejecutar este archivo primero debemos de ejecutar este comando
 
 ## Script de base de datos
 
-```
+```mysql
 CREATE DATABASE cds
 USE cds
 
